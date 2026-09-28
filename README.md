@@ -146,8 +146,37 @@ npm run preview
 
 ---
 
+## Deployment on Render (Render.com)
+
+This repository includes full out-of-the-box Render compatibility (`render.yaml`, `public/_redirects`, and `server.js`).
+
+### Option A: Static Site Deployment (Recommended & Free)
+1. In your **Render Dashboard**, click **New +** and select **Static Site**.
+2. Connect your GitHub repository (`Sahil12c5/Glow-and-care`).
+3. Fill in the build settings:
+   - **Build Command**: `npm install && npm run build`
+   - **Publish Directory**: `dist`
+4. Add a rewrite rule under **Redirects/Rewrites**:
+   - **Source**: `/*`
+   - **Destination**: `/index.html`
+   - **Action**: `Rewrite`
+5. Click **Create Static Site**.
+
+### Option B: Automatic Blueprint (1-Click)
+1. In Render, click **New +** and select **Blueprint**.
+2. Connect this repository — Render will automatically read `render.yaml` and configure everything.
+
+### Option C: Web Service Deployment (Node.js)
+1. In Render, click **New +** and select **Web Service**.
+2. Settings:
+   - **Build Command**: `npm install && npm run build`
+   - **Start Command**: `npm start`
+3. Click **Create Web Service**.
+
+---
+
 ## Promo Codes Available for Demo Testing
 
 - `GLOW10`: 10% off any order (no minimum spend)
-- `WELCOME20`: 20% off for new radiance lovers (orders > $30)
-- `CARE50`: $15 fixed discount on orders over $60
+- `WELCOME20`: 20% off for new radiance lovers (orders > ₹999)
+- `CARE50`: ₹300 fixed discount on orders over ₹1,999
